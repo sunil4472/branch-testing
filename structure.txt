@@ -1,0 +1,120 @@
+Notes
+
+class ko subclass lekhdaa khere  &-subclass name dinii jasle help garxa xutauna ko lagii
+    Example: footerContainer {
+        --- (footercontainer ko css lekhinxa)
+        ----
+        &-logo{
+           ( footor ko logo ko css lekhinxa esma )
+        }
+    }
+
+   (esalai poxi call carda footer.jsx component maaa
+        footer container ko lagi className="footerContainer" and for logo className="footerContainer-logo")
+-----------------------------------------------------------------------------
+Project Structure
+
+src >
+    -Components
+        -All components using in website is created here
+    -Pages
+        -All Pages is created here like about.jsx,career.jsx etc.
+    -Styles
+        -abstract (basically constants written which used in project)
+            - _button.scss (here button style is created)
+            - _index.scss (here all file imported which created in abstract folder like (import './variables') and all files)
+            - _mixing.scss
+            - _variable.scss (here mention all constants used in project)
+        -base
+            - _index.scss
+            - _loader.scss
+            - _normalize.scss
+        -Components
+        (here all components css is written)
+            - _footer.scss
+            - _index.scss
+            - _navbar.scss
+        -Pages
+        (here all pages css written)
+            - _about.scss
+            - _carrer.scss
+            etc.
+        
+        -App.css
+        (here sass create all css used in this project)
+
+        -App.css.map
+        (these is not related to us this is created by scss preview extension)
+
+        -App.scss
+        (these is main css file for project here we need to mention all _index.scss files used in these prject)
+         
+         eg; @import 'bootstrap/dist/css/bootstrap.min.css';
+            @import './abstract/index';
+            @import './Components/index';
+            @import './Pages/index';
+            @ import './base/index';
+------------------------------------------------------------------------------------
+Main.jsx 
+
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './Styles/App.css';
+import App from './App.jsx';
+import { ApolloProvider } from '@apollo/client';
+import client from './utils/ApolloClient.js';
+import { HelmetProvider } from 'react-helmet-async'; 
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <ApolloProvider client={client}>
+      <HelmetProvider> 
+        <App />
+      </HelmetProvider>
+    </ApolloProvider>
+  </StrictMode>
+);
+-----------------------------------------------------------------------------------------------
+App.jsx
+
+import { HashRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./Pages/home";
+import AboutPage from "./Pages/about";
+import ServicesPage from "./Pages/services";
+import ContactPage from "./Pages/contact";
+import CareerPage from "./Pages/career";
+import FAQPage from "./Pages/faq";
+import PortfolioPage from "./Pages/portfolio";
+import IndividualServicePage from "./Pages/IndividualService";
+import NavBar from "./Components/navbar";
+import Footer from "./Components/footer";
+import PageNotFound from './Pages/notfound'
+
+function App() {
+  return (
+    <>
+      <HashRouter>
+      <NavBar/>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/service/:slug" element={<IndividualServicePage />} />
+          {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
+          {/* <Route path="/career" element={<CareerPage />} /> */}
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Footer/>
+      </HashRouter>
+    </>
+  );
+}
+
+export default App;
+
+
+
+

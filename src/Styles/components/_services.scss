@@ -1,0 +1,70 @@
+.services {
+  text-align: center;
+  padding: 4rem 8%;
+  background-color: color(bg);
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: color(primary);
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__icon {
+    font-size: 3rem;
+    color: color(accent);
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+
+    .services__card:hover & {
+      transform: scale(1.2);
+      color: color(primary);
+    }
+  }
+
+  &__card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: color(primary);
+  }
+
+  &__card-desc {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+}

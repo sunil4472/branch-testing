@@ -1,0 +1,99 @@
+.contact {
+  padding: 5rem 8%;
+  background: map-get($colors, bg);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .contact__heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: map-get($colors, primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact__subheading {
+      font-size: 1.2rem;
+      color: map-get($colors, black);
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  &__form,
+  &__info {
+    flex: 1 1 450px;
+    background: color(bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid map-get($colors, accent);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border-color: map-get($colors, primary);
+    }
+  }
+
+  &__textarea {
+    height: 140px;
+    resize: none;
+  }
+
+  &__btn {
+    @include button(map-get($colors, btn), map-get($colors, white));
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  &__info-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: map-get($colors, primary);
+    margin-bottom: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: map-get($colors, black);
+
+    svg {
+      color: map-get($colors, secondary);
+      font-size: 1.3rem;
+    }
+  }
+
+  &__map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  // Responsive
+  @media (max-width: map-get($breakpoints, md)) {
+    &__container {
+      flex-direction: column;
+    }
+  }
+}

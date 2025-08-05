@@ -1,0 +1,82 @@
+.testimonials {
+  padding: 5rem 8%;
+  text-align: center;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: color(primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+
+  &__slider {
+    .slick-slide {
+      padding: 0 2rem; // ✅ Adds space between slides
+    }
+
+    .slick-dots li button:before {
+      font-size: 0.8rem;
+      color: color(primary);
+    }
+  }
+
+  &__card {
+    background: rgb(230, 230, 230);
+    padding: 2rem;
+    margin: 20px 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid color(accent);
+      object-fit: cover;
+    }
+  }
+
+  &__review {
+    font-size: 1rem;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+    min-height: 45px;
+  }
+
+  &__name {
+    font-weight: 600;
+    color: color(primary);
+    font-size: 1.2rem;
+  }
+
+  &__position {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+
+  &__stars {
+    color: gold;
+    font-size: 1rem;
+  }
+}

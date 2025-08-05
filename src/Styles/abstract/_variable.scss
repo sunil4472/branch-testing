@@ -1,0 +1,29 @@
+// _variables.scss
+
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+// colors
+$colors: (
+  primary: #0a400c,
+  secondary: #819067,
+  accent: #b1ab86,
+  bg: #fefae0,
+  white: #ffffff,
+  black: #000000,
+  btn: #1fa5ff,
+);
+
+// breakpoints
+$breakpoints: (
+  xl: 1200px,
+  // large desktops
+  lg: 992px,
+  // laptops
+  md: 768px,
+  // tablets
+  sm: 576px,
+  // large phones
+  xs: 400px // very small phones,
+);

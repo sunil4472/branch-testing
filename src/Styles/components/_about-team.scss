@@ -1,0 +1,82 @@
+.aboutTeam {
+  padding: 5rem 8%;
+  background-color: #e8f5e9;
+  color: #0a400c;
+  text-align: center;
+  margin-bottom: 0 !important;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 0 !important;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    color: #4a774a;
+    margin-bottom: 3rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.teamCard {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgba(0, 64, 12, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #0a400c;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  &__position {
+    font-size: 1rem;
+    color: #4a774a;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 1rem;
+    color: #5a5a5a;
+    font-style: italic;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .aboutTeam {
+    padding: 3rem 5%;
+  }
+
+  .aboutTeam__title {
+    font-size: 2.5rem;
+  }
+
+  .aboutTeam__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}

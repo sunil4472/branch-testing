@@ -1,0 +1,86 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 8%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, color(primary), color(bg));
+  overflow: hidden;
+
+  &__content {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+
+    .hero--loaded & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+
+    span {
+      color: color(accent);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+
+  &__btn {
+    @include button(color(primary), #fff);
+  }
+
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease 0.3s;
+
+    .hero--loaded & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Responsive styles
+  @include respond(md) {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+
+    &__image {
+      margin-top: 2rem;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

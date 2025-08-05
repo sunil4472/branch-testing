@@ -1,0 +1,123 @@
+.aboutHero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a400c 40%, #192a16 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fefae0;
+  padding: 0 2rem;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: url("/assets/1.jpg") center/cover no-repeat;
+    filter: brightness(0.45) saturate(1.2);
+    z-index: 0;
+    will-change: transform;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+
+    & .aboutHero__title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-size: 4rem;
+      letter-spacing: -1.5px;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+
+      @media (max-width: 768px) {
+        font-size: 2.8rem;
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #b1ab86, #819067);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientMove 3s ease infinite;
+      display: inline-block;
+    }
+
+    & .aboutHero__subtitle {
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.02em;
+
+      span {
+        color: #b1ab86;
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    & .aboutHero__btn {
+      @include button(color(secondary), color(primary));
+    }
+  }
+
+  &__shapes {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    z-index: 5;
+    pointer-events: none;
+    will-change: transform;
+
+    .shape {
+      position: absolute;
+      opacity: 0.2;
+      filter: drop-shadow(0 0 4px rgba(129, 144, 103, 0.2));
+      transition: opacity 0.3s ease;
+
+      &--circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #b1ab86;
+        top: 0;
+        left: 0;
+      }
+      &--triangle {
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 70px solid #819067;
+        top: 100px;
+        left: 60px;
+      }
+      &--square {
+        width: 70px;
+        height: 70px;
+        background: #0a400c;
+        top: 60px;
+        left: 120px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

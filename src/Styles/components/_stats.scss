@@ -1,0 +1,44 @@
+.stats {
+  background-color: #fff;
+  padding: 5rem 8%;
+  text-align: center;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__box {
+    background-color: #f3f3f3;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: color(primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__label {
+    font-size: 1.1rem;
+    color: #555;
+  }
+}
