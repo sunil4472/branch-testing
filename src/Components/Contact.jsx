@@ -32,7 +32,7 @@ Message: ${formData.message}`;
         <h2 className="contact__heading">Get in Touch With Us</h2>
         <p className="contact__subheading">
           We’d love to hear from you! Fill out the form or reach us using the
-          details below.
+          details below. kakak kakiiiii
         </p>
       </div>
 
